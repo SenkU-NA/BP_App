@@ -1,0 +1,75 @@
+﻿<Window x:Class="BP_App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BP_App"
+        mc:Ignorable="d"
+        Title="BP Farm" Height="720" Width="540" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Background="#6a097d">
+    <Grid>
+        <Rectangle Margin="50" Style="{StaticResource appBackground}"></Rectangle>
+        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Right" Margin="55">
+            <CheckBox Content="VIP" Style="{StaticResource CB List Style}" Margin="0,0,14,0" Name="vip" Checked="vip_Checked" Unchecked="vip_Checked"/>
+            <TextBlock Text="Disable" Style="{StaticResource list style}" Name="vipstat"/>
+        </StackPanel>
+        <StackPanel Margin="60" Style="{StaticResource stackpanelstyle}">
+            <TextBlock Text="Фарм БП" Style="{StaticResource topic text}"/>
+            <StackPanel Name="bpname" Orientation="Horizontal">
+                <StackPanel Margin="0,0,5,0">
+                    <TextBlock Text="Основное" Style="{StaticResource List topic}"/>
+                    <TextBlock Text="0/00 в казино" Style="{StaticResource list style}" Name="zeroText"/>
+                    <TextBlock Text="Лотерея" Style="{StaticResource list style}" Name="lotteryText"/>
+                    <TextBlock Text="Dance Battle" Style="{StaticResource list style}" Name="dbText"/>
+                    <TextBlock Text="Тренажерный зал " Style="{StaticResource list style}" Name="gymText"/>
+                    <TextBlock Text="Тир" Style="{StaticResource list style}" Name="shootingGalleryText"/>
+                    <TextBlock Text="10 почты" Style="{StaticResource list style}" Name="mailText"/>
+                    <TextBlock Text="Киностудия" Style="{StaticResource list style}" Name="studioText"/>
+                    <TextBlock Text="Картинг" Style="{StaticResource list style}" Name="kartText"/>
+                    <TextBlock Text="10 фермы" Style="{StaticResource list style}" Name="farmText"/>
+                    <TextBlock Text="25 ''огоньков'' пожарным" Style="{StaticResource list style}" Name="firefightersText"/>
+                    <TextBlock Text="Гонка через телефон" Style="{StaticResource list style}" Name="streetraceText"/>
+                    <TextBlock Text="5 видео в кинотеатре" Style="{StaticResource list style}" Name="cinemaText"/>
+                    <TextBlock Text="5 игр в ТК (от 100$)" Style="{StaticResource list style}" Name="TCText"/>
+                    <TextBlock Text="3 игры на арене (от 100$)" Style="{StaticResource list style}" Name="arenaText"/>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock Style="{StaticResource List topic}" Margin="0,0,0,1"/>
+                    <CheckBox Style="{StaticResource CB List Style}" Checked="CheckBox_Checked" Unchecked="CheckBox_Checked" Name="zero" VerticalAlignment="Center"/>
+                    <CheckBox Style="{StaticResource CB List Style}" Checked="lottery_Checked" Unchecked="lottery_Checked" Name="lottery" VerticalAlignment="Center"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,1,0,0">
+                        <TextBlock Style="{StaticResource Counter Ints}" Name="dbcounter" Text="0"/>
+                        <Button Name="dbadd" Content="+" Style="{StaticResource counterButtons}" Click="dbadd_Click"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,1,0,0">
+                        <TextBlock Style="{StaticResource Counter Ints}" Name="gymcounter" Text="0"/>
+                        <Button Name="gymadd" Content="+" Style="{StaticResource counterButtons}" Click="gymadd_Click"/>
+                    </StackPanel>
+                    <CheckBox Style="{StaticResource CB List Style}" Checked="shooting_Checked" Unchecked="shooting_Checked" Name="shooting" VerticalAlignment="Center"/>
+                    <CheckBox Style="{StaticResource CB List Style}" Checked="mail_Checked" Unchecked="mail_Checked" Name="mail" VerticalAlignment="Center"/>
+                    <CheckBox Style="{StaticResource CB List Style}" Checked="studio_Checked" Unchecked="studio_Checked" Name="studio" VerticalAlignment="Center"/>
+                    <CheckBox Style="{StaticResource CB List Style}" Checked="kart_Checked" Unchecked="kart_Checked" Name="kart" VerticalAlignment="Center"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,1,0,0">
+                        <TextBlock Style="{StaticResource Counter Ints}" Name="farmcounter" Text="0"/>
+                        <Button Name="farmadd" Content="+" Style="{StaticResource counterButtons}" Click="farmadd_Click"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,1,0,0">
+                        <TextBlock Style="{StaticResource Counter Ints}" Name="firefighters" Text="0"/>
+                        <Button Name="ffcounter" Content="+" Style="{StaticResource counterButtons}" Click="ffcounter_Click"/>
+                    </StackPanel>
+                    <CheckBox Style="{StaticResource CB List Style}" Checked="streetrace_Checked" Unchecked="streetrace_Checked" Name="streetrace" VerticalAlignment="Center"/>
+                    <CheckBox Style="{StaticResource CB List Style}" Checked="cinema_Checked" Unchecked="cinema_Checked" Name="cinema" VerticalAlignment="Center"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource Counter Ints}" Name="tccounter" Text="0"/>
+                        <Button Name="tcadd" Content="+" Style="{StaticResource counterButtons}" Click="tcadd_Click"/>
+                    </StackPanel>
+                    <CheckBox Style="{StaticResource CB List Style}" Checked="arena_Checked" Unchecked="arena_Checked" Name="arena" VerticalAlignment="Center"/>                    
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Bottom" Margin="50,0,50,80" HorizontalAlignment="Center" Orientation="Horizontal">
+            <TextBlock Text="Всего BP: " Style="{StaticResource list style}"/>
+            <TextBlock Name="TotalOut" Text="0" Style="{StaticResource list style}"/>
+        </StackPanel>
+        <Button Name="DropAllButton" VerticalAlignment="Bottom" Height="25" Margin="50,0,50,50" Style="{StaticResource counterButtons}" Width="60" Content="Сброс" Click="DropAllButton_Click"/>
+    </Grid>
+</Window>
