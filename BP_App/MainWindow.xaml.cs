@@ -185,7 +185,7 @@ namespace BP_App
                 farmText.Background = BackEn;
                 farmText.Foreground = ForeEn;
             }
-            if (dbcount == 10)
+            if (farmcount == 10)
             {
                 totalBP += 1;
                 if (vip.IsChecked == true)
